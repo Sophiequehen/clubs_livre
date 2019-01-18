@@ -20,12 +20,14 @@ $output = '';
 $result = $pdo->prepare("SELECT * FROM livres WHERE titre LIKE '%".$_POST["search"]."%'");
 $result->execute();
 $count = $result->rowCount();
-if($count > 0){
-	$prout = $pdo->prepare("SELECT * FROM livres WHERE titre LIKE '%".$_POST["search"]."%'");
-	$prout->execute();
-	$output .= '<h4>Résultats :</h4>';
-	while ($row = $prout->fetch()){
-		$output .= '<h3>'.$row["titre"].'</h3>';
+if($count > 0){ 	
+	while ($row = $result->fetch()){
+		$output .= "<ul class='liste_livres'>
+		<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+		<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+		<li>".$row['club']."</li>
+		</ul>
+		<div class='container_tiret'><div class='tiret'></div></div>";
 	}
 	echo $output;
 }else{

@@ -15,7 +15,11 @@
 	<section class="home">
 		<div class="container_liste">
 			<input type="text" name="search_text" id="search_text" placeholder="Rechercher un titre">
-			<?php
+			<div id="result">
+			</div>
+		</div>
+	</section>
+			<!-- <?php
 			Database::connect();
 			$newUser = new Livre;	
 			foreach ($newUser->read()->fetchAll() as $row) {
@@ -26,11 +30,7 @@
 				</ul>
 				<div class='container_tiret'><div class='tiret'></div></div>";
 			} 
-			?>
-			<div id="result">
-			</div>
-		</div>
-	</section>
+			?> -->
 <!-- 	<li>Collection ".$row['collection']."</li>
 				<li>N°".$row['numero_volume']."</li>
 				<li>En ".$row['annee']."</li>
@@ -50,7 +50,15 @@
 						$('#search_text').keyup(function(){
 							var txt = $(this).val();
 							if(txt != ''){
-								console.log('prout');
+								$.ajax({
+									url:"fetch.php",
+									method:"post",
+									data:{search:txt},
+									dataType:"text",
+									success:function(data){
+										$('#result').html(data);
+									}
+								});
 							}else{
 								$('#result').html('');
 								$.ajax({
