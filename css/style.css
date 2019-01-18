@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,400,700,900');
+
+body{
+	font-family: 'Raleway', sans-serif;
+	color: black;
+	margin: 0;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+}
+
+section.home{
+	width: 100%;
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+section.home form div, section.home form h1{
+	display: flex;
+	justify-content: center;
+}
+
+section.home input{
+	border: none;
+	background: black;
+	margin: 0 0 0 10px;
+	padding: 5px 5px;
+	color: white;
+}
+
+.name{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type=number] { 
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+textarea{
+	border: none;
+	background-color: black;
+	color: white;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+label{
+	margin-bottom: 10px;
+}
+
+section.home button{
+	background: black;
+	width: 300px;
+	color: white;
+	border: none;
+	margin-top: 20px;
+	padding: 15px;
+}
+
+.lien{
+	color: black;
+}
+
+.liste_livres{
+	color: black;
+	/*width: 80%;*/
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/*flex-wrap: wrap;*/
+	/*justify-content: flex-start;*/
+	list-style: none;
+	padding: 0;
+}
+
+.container_tiret{
+	display: flex;
+	justify-content: center;
+}
+
+.tiret{
+	background: black;
+	height: 5px;
+	width: 20px;
+}
+
+.liste_titre{
+	font-weight: 700;
+	font-size: 1.4em;
+}
+
+.liste_datas{
+	font-weight: 700;
+}
+
+li a{
+	color: black;
+	/*width: 236px;
+	display: flex;
+	justify-content: space-between;
+	background: #293133;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	color: white;
+	padding: 20px;*/
+}
+
+
+
+section.home li a.a-text{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 60%;
+	height: 20px;
+}
+
+li i{
+	margin-left: 20px;
+	color: white;
+}
+
+section.nav{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100px;
+	background: black;
+	margin-bottom: 50px;
+}
+
+.nav h1, .nav h2{
+	color: white;
+}
+
+.nav h2{
+	font-size: 15px;
+	margin-right: 20px;
+	border-right: 1px solid white;
+	padding-right: 20px;
+}
+
+/*-------------------PROFIL--------------------*/
+.profil{
+	margin-top: 100px;
+}
+
+.name-profil{
+	width: 40%;
+	padding-right: 30px;
+}
+
+.name-profil p{
+	margin: 0 auto;
+	word-wrap: break-word;
+	text-align: right;
+	font-weight: 900;
+	font-size: 60px;
+}
+
+.name-profil p.auteur{
+	font-weight: 300;
+}
+
+.infos-profil{
+	width: 40%;
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.infos-profil ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.infos-profil p.titre{
+	margin-bottom: 0;
+}
+
+.infos-profil li.infos{
+	margin-top: 0;
+	font-weight: 300;
+}
