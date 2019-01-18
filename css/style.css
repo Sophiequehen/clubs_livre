@@ -190,3 +190,9 @@ section.nav{
 	margin-top: 0;
 	font-weight: 300;
 }
+
+div#result{
+	width: 100%;
+	height: 200px;
+	background: blue;
+}
