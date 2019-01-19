@@ -9,6 +9,7 @@ var $input = $('#search_text');
 var $drop = $('.select_club');
 var $top = $('#img_top');
 var $down = $('#img_down');
+var $before_ajax = $('#before_ajax');
 
 $drop.click(function(){
 	$("#francais").toggle(); 
@@ -22,6 +23,7 @@ $drop.click(function(){
 })
 
 $francais.click(function() {
+	$before_ajax.addClass("display_none");
 	$result.addClass("display_none");
 	$input.addClass("display_none");
 	$("#clubs_francais").removeClass("display_none");
@@ -32,6 +34,7 @@ $francais.click(function() {
 });
 
 $meilleur.click(function() {
+	$before_ajax.addClass("display_none");
 	$result.addClass("display_none");
 	$input.addClass("display_none");
 	$("#clubs_francais").addClass("display_none");
@@ -42,6 +45,7 @@ $meilleur.click(function() {
 });
 
 $mois.click(function() {
+	$before_ajax.addClass("display_none");
 	$input.addClass("display_none");
 	$result.addClass("display_none");
 	$("#clubs_francais").addClass("display_none");
@@ -52,6 +56,7 @@ $mois.click(function() {
 });
 
 $femme.click(function() {
+	$before_ajax.addClass("display_none");
 	$input.addClass("display_none");
 	$result.addClass("display_none");
 	$("#clubs_francais").addClass("display_none");
@@ -62,6 +67,7 @@ $femme.click(function() {
 });
 
 $libraires.click(function() {
+	$before_ajax.addClass("display_none");
 	$input.addClass("display_none");
 	$result.addClass("display_none");
 	$("#clubs_francais").addClass("display_none");
@@ -72,6 +78,7 @@ $libraires.click(function() {
 });
 
 $all.click(function() {
+	$before_ajax.removeClass("display_none");
 	$result.removeClass("display_none");
 	$input.removeClass("display_none");
 	$("#clubs_francais").addClass("display_none");

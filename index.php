@@ -14,18 +14,18 @@
 <body>
 	<div class="filters">
 		<ul class="liste_clubs">
-			<li class="select_club">Sélectionner un club<img id="img_down" src="img/down.png"><img id="img_top" class="display_none" src="img/top.png"></li>
-			<li class="display_none" id="francais">Club français du livre</li>
-			<li class="display_none" id="meilleur">Club du meilleur livre</li>
-			<li class="display_none" id="mois">Club du livre du mois</li>
-			<li class="display_none" id="femme">Club de la femme</li>
-			<li class="display_none" id="libraires">Club des libraires de France</li>
-			<li class="display_none" id="all">Voir tous les clubs</li>
+			<li class="select_club">Sélectionner un club<img id="img_down" class="display_none" src="img/down.png"><img id="img_top" src="img/top.png"></li>
+			<li id="francais">Club français du livre</li>
+			<li id="meilleur">Club du meilleur livre</li>
+			<li id="mois">Club du livre du mois</li>
+			<li id="femme">Club de la femme</li>
+			<li id="libraires">Club des libraires de France</li>
+			<li id="all">Tous les clubs</li>
 		</ul>
 	</div>
 	<section class="home">
 		<div class="container_liste">
-			<input type="text" name="search_text" id="search_text" placeholder="Rechercher un titre">
+			<input type="text" name="search_text" id="search_text" placeholder="Rechercher un titre, un auteur, un maquettiste">
 			<div id="before_ajax">
 				<?php
 				Database::connect();

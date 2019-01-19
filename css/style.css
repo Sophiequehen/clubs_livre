@@ -15,9 +15,44 @@ a{
 	display: none;
 }
 
+#search_text{
+	padding:10px 0 10px 40px;
+	background-image:url(../img/search.png);
+	background-position:10px;
+	background-size: 15px;
+	background-repeat:no-repeat;
+}
+
+.container_liste{
+	/*background: blue;*/
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 50px;
+}
+
 .container_liste h2{
 	margin-top: 0;
+	background: black;
+	color: white;
+	width: 400px;
 }
+
+.contain_ul{
+	/*background: red;*/
+	width: 400px;
+}
+
+#before_ajax, #result, #clubs_francais, #clubs_meilleur, #clubs_mois, #clubs_femme, #clubs_libraires{
+	text-align: center;
+	/*background: yellow;
+	width: 100%;
+	justify-content: space-around;
+	display: flex;
+	flex-wrap: wrap;*/
+}
+
 /*-------------------INDEX--------------------*/
 /*-------------------Filtres------------------*/
 .filters{
@@ -68,11 +103,13 @@ section.home form div, section.home form h1{
 }
 
 section.home input{
+	width: 350px;
 	border: none;
 	background: black;
 	margin: 0 0 0 10px;
 	padding: 5px 5px;
 	color: white;
+	font-weight: 700;
 }
 
 .name{
@@ -171,6 +208,8 @@ li i{
 }
 
 section.nav{
+	position: sticky;
+	top: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;

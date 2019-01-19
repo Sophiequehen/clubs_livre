@@ -17,7 +17,7 @@ $options = [
 $pdo = new PDO($dsn, $username, $password, $options);
 
 $output = '';
-$result = $pdo->prepare("SELECT * FROM livres WHERE titre LIKE '%".$_POST["search"]."%'");
+$result = $pdo->prepare("SELECT * FROM livres WHERE titre LIKE '%".$_POST["search"]."%' OR auteur LIKE '%".$_POST["search"]."%' OR maquettiste LIKE '%".$_POST["search"]."%' ");
 $result->execute();
 $count = $result->rowCount();
 if($count > 0){ 	
