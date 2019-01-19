@@ -6,7 +6,20 @@ var $libraires = $("#libraires");
 var $all = $("#all"); 
 var $result = $("#result");
 var $input = $('#search_text');
+var $drop = $('.select_club');
+var $top = $('#img_top');
+var $down = $('#img_down');
 
+$drop.click(function(){
+	$("#francais").toggle(); 
+	$("#meilleur").toggle(); 
+	$("#mois").toggle(); 
+	$("#femme").toggle(); 
+	$("#libraires").toggle(); 
+	$("#all").toggle(); 
+	$top.toggle();
+	$down.toggle();
+})
 
 $francais.click(function() {
 	$result.addClass("display_none");

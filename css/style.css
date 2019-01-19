@@ -26,6 +26,11 @@ a{
 	height: 100%;
 }
 
+.filters img{
+	width: 20px;
+	height: 20px;
+}
+
 .liste_clubs{
 	color: black;
 	display: flex;
@@ -41,6 +46,8 @@ a{
 }
 
 .select_club{
+	display: flex;
+	align-items: center;
 	font-weight: 700;
 	font-size: 1.2em;
 }
