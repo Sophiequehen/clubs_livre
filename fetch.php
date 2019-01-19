@@ -31,6 +31,6 @@ if($count > 0){
 	}
 	echo $output;
 }else{
-	echo 'Pas de club inventorié';
+	echo '<p>Pas de club correspondant</p>';
 }
 ?>

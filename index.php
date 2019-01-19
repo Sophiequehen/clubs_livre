@@ -12,25 +12,99 @@
 @include 'navbar.php';
 ?> 
 <body>
+	<div class="filters">
+		<ul class="liste_clubs">
+			<li class="select_club">Sélectionner un club</li>
+			<li id="francais">Club français du livre</li>
+			<li id="meilleur">Club du meilleur livre</li>
+			<li id="mois">Club du livre du mois</li>
+			<li id="femme">Club de la femme</li>
+			<li id="libraires">Club des libraires de France</li>
+			<li id="all">Voir tous les clubs</li>
+		</ul>
+	</div>
 	<section class="home">
 		<div class="container_liste">
 			<input type="text" name="search_text" id="search_text" placeholder="Rechercher un titre">
 			<div id="result">
 			</div>
+			<div class="display_none" id="clubs_francais">
+				<h2>Clubs français du livre : </h2>
+				<?php
+				Database::connect();
+				$newUser = new Livre;	
+				foreach ($newUser->readFrancais()->fetchAll() as $row) {
+					echo "<ul class='liste_livres'>
+					<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+					<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+					<li>".$row['club']."</li>
+					</ul>
+					<div class='container_tiret'><div class='tiret'></div></div>";
+				} 
+				?>
+			</div>
+			<div class="display_none" id="clubs_meilleur">
+				<h2>Clubs du meilleur livre : </h2>
+				<?php
+				Database::connect();
+				$newUser = new Livre;	
+				foreach ($newUser->readMeilleur()->fetchAll() as $row) {
+					echo "<ul class='liste_livres'>
+					<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+					<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+					<li>".$row['club']."</li>
+					</ul>
+					<div class='container_tiret'><div class='tiret'></div></div>";
+				} 
+				?>
+			</div>
+			<div class="display_none" id="clubs_mois">
+				<h2>Clubs du mois : </h2>
+				<?php
+				Database::connect();
+				$newUser = new Livre;	
+				foreach ($newUser->readMois()->fetchAll() as $row) {
+					echo "<ul class='liste_livres'>
+					<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+					<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+					<li>".$row['club']."</li>
+					</ul>
+					<div class='container_tiret'><div class='tiret'></div></div>";
+				} 
+				?>
+			</div>
+			<div class="display_none" id="clubs_femme">
+				<h2>Clubs des la femme : </h2>
+				<?php
+				Database::connect();
+				$newUser = new Livre;	
+				foreach ($newUser->readFemme()->fetchAll() as $row) {
+					echo "<ul class='liste_livres'>
+					<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+					<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+					<li>".$row['club']."</li>
+					</ul>
+					<div class='container_tiret'><div class='tiret'></div></div>";
+				} 
+				?>
+			</div>
+			<div class="display_none" id="clubs_libraires">
+				<h2>Clubs des libraires de France : </h2>
+				<?php
+				Database::connect();
+				$newUser = new Livre;	
+				foreach ($newUser->readLibraires()->fetchAll() as $row) {
+					echo "<ul class='liste_livres'>
+					<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
+					<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
+					<li>".$row['club']."</li>
+					</ul>
+					<div class='container_tiret'><div class='tiret'></div></div>";
+				} 
+				?>
+			</div>
 		</div>
 	</section>
-			<!-- <?php
-			Database::connect();
-			$newUser = new Livre;	
-			foreach ($newUser->read()->fetchAll() as $row) {
-				echo "<ul class='liste_livres'>
-				<li class='liste_titre'><a href='profil.php?id=".$row['id_livre']."'>".$row['titre']."</a></li>
-				<li>Écrit par <span class='liste_datas'>".$row['auteur']."</span></li>
-				<li>".$row['club']."</li>
-				</ul>
-				<div class='container_tiret'><div class='tiret'></div></div>";
-			} 
-			?> -->
 <!-- 	<li>Collection ".$row['collection']."</li>
 				<li>N°".$row['numero_volume']."</li>
 				<li>En ".$row['annee']."</li>
@@ -45,6 +119,7 @@
 				<li>Appartient à ".$row['proprietaire']."</li> -->
 
 				<script type="text/javascript" src="js/jquery.js"></script>
+				<script type="text/javascript" src="js/filters.js"></script>
 				<script type="text/javascript">
 					$(document).ready(function(){
 						$('#search_text').keyup(function(){

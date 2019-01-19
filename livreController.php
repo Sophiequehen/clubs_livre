@@ -16,6 +16,40 @@ class Livre extends Database{
 		return $reqread;
 	}
 
+	public function readFrancais(){
+
+		$reqread = parent::$pdo->prepare("SELECT * FROM livres WHERE club = 'Club français du livre'");
+		$reqread->execute();
+		return $reqread;
+	}
+
+	public function readMeilleur(){
+
+		$reqread = parent::$pdo->prepare("SELECT * FROM livres WHERE club = 'Club du meilleur livre'");
+		$reqread->execute();
+		return $reqread;
+	}
+
+	public function readMois(){
+
+		$reqread = parent::$pdo->prepare("SELECT * FROM livres WHERE club = 'Club du livre du mois'");
+		$reqread->execute();
+		return $reqread;
+	}
+
+	public function readFemme(){
+
+		$reqread = parent::$pdo->prepare("SELECT * FROM livres WHERE club = 'Club de la femme'");
+		$reqread->execute();
+		return $reqread;
+	}
+
+	public function readLibraires(){
+
+		$reqread = parent::$pdo->prepare("SELECT * FROM livres WHERE club = 'Club des libraires de France'");
+		$reqread->execute();
+		return $reqread;
+	}
 	// public function edit($nom, $prenom, $annee, $commentaires, $id){
 
 	// 	$reqedit = parent::$pdo->prepare("UPDATE personne SET nom=:nom, prenom=:prenom, annee=:annee, commentaires=:commentaires WHERE id=:id");
